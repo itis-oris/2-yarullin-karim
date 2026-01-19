@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="client.screens.ConnectionScreen"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER"
+      spacing="10"
+      padding="20">
+
+    <Label text="Подключение к серверу ColorRush"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="ipField" promptText="IP адрес сервера"/>
+    <TextField fx:id="portField" promptText="Порт сервера"/>
+    <TextField fx:id="nameField" promptText="Ваше имя"/>
+    <Button fx:id="connectButton" text="Подключиться" onAction="#onConnectClicked"/>
+    <Label fx:id="statusLabel" style="-fx-text-fill: red;"/>
+    <CheckBox fx:id="showCompassCheckBox" text="Показать компасс"/>
+
+</VBox>

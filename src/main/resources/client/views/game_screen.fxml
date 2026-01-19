@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="client.controllers.GameController">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <top>
+        <HBox alignment="CENTER" spacing="15" style="-fx-padding: 5; -fx-background-color: #f0f0f0;">
+            <Label fx:id="playersLabel" text="Игроков: 1" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <Label fx:id="roundLabel" text="Раунд: 0" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <Label fx:id="timerLabel" text="Время: 0.0" style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: red;"/>
+            <Label fx:id="colorLabel" text="Цвет: -" style="-fx-font-weight: bold; -fx-font-size: 16px;"/>
+            <Button fx:id="exitButton" text="Выйти из игры" onAction="#handleExitGame"
+                    style="-fx-font-weight: bold; -fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="rootStack">
+
+            <BorderPane>
+                <center>
+                    <Canvas fx:id="gameCanvas" width="800" height="600"/>
+                </center>
+
+                <top>
+                    <Canvas fx:id="compassCanvas" width="100" height="100"/>
+                </top>
+            </BorderPane>
+
+            <StackPane fx:id="fullScreenCountdown" visible="false"
+                       style="-fx-background-color: rgba(0, 0, 0, 0.7); -fx-alignment: center;">
+                <Label fx:id="countdownLabel" textFill="WHITE"
+                       style="-fx-font-weight: bold; -fx-font-size: 120px;"/>
+            </StackPane>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label fx:id="statusLabel" text="Ожидание начала матча..."
+                   style="-fx-font-weight: bold; -fx-font-size: 18px;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

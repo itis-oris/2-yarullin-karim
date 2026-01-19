@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="client.controllers.GameOverController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+
+            <Label fx:id="titleLabel" text="Игра окончена"
+                   style="-fx-font-size: 32px; -fx-font-weight: bold;"/>
+
+            <Label fx:id="winnerLabel" text="Ничья!"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+
+            <TableView fx:id="scoresTable" prefWidth="400.0">
+                <columns>
+                    <TableColumn fx:id="nameColumn" text="Игрок" prefWidth="250.0"/>
+                    <TableColumn fx:id="winsColumn" text="Побед" prefWidth="150.0"/>
+                </columns>
+            </TableView>
+
+            <Button fx:id="returnButton" text="Вернуться в главное меню"
+                    style="-fx-font-size: 16px;"
+                    onAction="#returnToMain"/>
+        </VBox>
+    </center>
+
+</BorderPane>

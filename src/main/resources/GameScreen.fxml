@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:controller="client.screens.GameScreen"
+            xmlns:fx="http://javafx.com/fxml" prefWidth="800" prefHeight="600">
+
+    <top>
+        <HBox spacing="15" alignment="CENTER" style="-fx-padding: 5; -fx-background-color: #f0f0f0;">
+            <Label fx:id="playersLabel" text="Игроков: 1"/>
+            <Label fx:id="roundLabel" text="Раунд: 0"/>
+            <Label fx:id="timerLabel" text="Время: 0.0"/>
+            <Label fx:id="colorLabel" text="Цвет: -"/>
+            <Button fx:id="exitButton" text="Выйти из игры"/>
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="rootStack">
+            <BorderPane>
+                <center>
+                    <Canvas fx:id="gameCanvas" width="800" height="500"/>
+                </center>
+                <top>
+                    <Canvas fx:id="compassCanvas" width="100" height="100"/>
+                </top>
+            </BorderPane>
+
+            <StackPane fx:id="fullScreenCountdown" style="-fx-background-color: rgba(0,0,0,0.7);" visible="false">
+                <Label fx:id="countdownLabel" textFill="WHITE" style="-fx-font-size: 120px;"/>
+            </StackPane>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="5">
+            <Label fx:id="statusLabel" text="Ожидание начала матча..."/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

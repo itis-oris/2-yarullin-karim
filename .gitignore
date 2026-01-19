@@ -1,0 +1,6 @@
+.idea
+
+.sql
+target
+*.db
+*.json
